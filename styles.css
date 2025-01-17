@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;  
+    height: 900px; 
+    margin: 20px auto;
+    border: 1px solid black; 
+}
+
+
+.content {
+    flex: 0 0 calc(100% / 16); 
+    height: calc(100% / 16);   
+    box-sizing: border-box;   
+    border: 1px solid lightgray; 
+}
+/* The calc(100% / 16) always takes the total width or total height of the container, 
+depending on whether it’s applied to flex-basis (width) or height. The items will form 
+squares only if the container's width and height are equal. so its noit taking 100% of the square
+Correct, it’s not taking 100% of each square—it’s taking 100% of the container (the parent element) 
+and dividing it by 16. */
+
