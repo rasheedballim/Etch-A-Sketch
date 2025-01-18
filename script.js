@@ -4,7 +4,6 @@ const container = document.querySelector('.container');
 
 
 
-// loop 256 times to make a grid
 function gridCreate(number) {
     container.innerHTML = ''; 
     for (let i = 0; i < (number*number); i++) {
@@ -47,8 +46,8 @@ btn.addEventListener("click", resetColours);
 let contents = document.querySelectorAll('.content');
 
 contents.forEach(content => {
-  content.style.setProperty('flex', `0 0 calc(850px / ${number})`);
-  content.style.setProperty('height', `calc(850px / ${number})`);
+  content.style.setProperty('flex', `0 0 calc(650px / ${number})`);
+  content.style.setProperty('height', `calc(650px / ${number})`);
 });
 
 

@@ -1,17 +1,23 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 850px;  
-    height: 850px; 
+    width: 650px;  
+    height: 650px; 
     margin: 20px auto;
     border: 5px solid black; 
     border-radius: 10px;
+
+}
+#heading{
+    font-size: 40px;
+    font-weight: bold;
+    color: purple;
 }
 
 
 .content {
-    flex: 0 0 calc(850px / 64); 
-    height: calc(850px / 64);   
+    flex: 0 0 calc(650px / 64); 
+    height: calc(650px / 64);   
     box-sizing: border-box;   
     border: 1px solid lightgray; 
     border-radius: 10px;
@@ -36,11 +42,28 @@ and dividing it by 16. */
 .nav-panel{
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 20px;
+    margin-left: 90px;
+    border: purple solid 2px;
+    height: 550px;
 
 }
 
 .grid-input{
-    margin-top: 20px;
     width: 100px;
     height: 20px;
+}
+
+#confirm-button{
+    width: 70px;
+}
+body{
+    display: flex;
+    background-color: rgb(249, 245, 204);
+}
+
+#info-text{
+    font-weight: bold;
 }
