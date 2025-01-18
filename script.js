@@ -4,24 +4,59 @@ const container = document.querySelector('.container');
 
 
 
-
 // loop 256 times to make a grid
-for (let i = 0; i < 256; i++) {
-    // creates a new div and referencing it to 'content'
+function gridCreate(number) {
+    container.innerHTML = ''; 
+    for (let i = 0; i < (number*number); i++) {
     const content = document.createElement('div');
-
     content.classList.add('content');
     container.appendChild(content);
 }
-
 const squares = document.querySelectorAll(".content");
-squares.forEach((button => {
-    button.addEventListener("mouseover", () =>{
-        console.log('Mouse entered');
-        button.style.backgroundColor = getRandomColour();
 
-    })
-}))
+let isMouseDown = false;
+document.addEventListener("mousedown", (event) =>{
+    
+    if(event.button ===0){
+        isMouseDown = true;
+    }
+});
+
+document.addEventListener("mouseup",() =>{
+    isMouseDown = false;
+});
+
+squares.forEach((button) => {
+    button.addEventListener("mouseover", () => {
+        if (isMouseDown) { 
+            button.style.backgroundColor = getRandomColour();
+        }
+    });
+});
+
+
+function resetColours(){
+    squares.forEach(div => {
+    div.style.backgroundColor = 'white';
+});
+    
+
+} 
+const btn = document.querySelector("#reset_button");
+btn.addEventListener("click", resetColours);
+let contents = document.querySelectorAll('.content');
+
+contents.forEach(content => {
+  content.style.setProperty('flex', `0 0 calc(850px / ${number})`);
+  content.style.setProperty('height', `calc(850px / ${number})`);
+});
+
+
+
+
+
+}
+
 
 function getRandomColour(){
     const letters = '0123456789ABCDEF';
@@ -39,12 +74,12 @@ function getRandomColour(){
 
 
 
-function resetColours(){
-    squares.forEach(div => {
-    div.style.backgroundColor = 'white';
-});
-    
 
-} 
-const btn = document.querySelector("#reset_button");
-btn.addEventListener("click", resetColours);
+
+const inputField = document.querySelector("#number-input")
+const readInputField = document.querySelector("#confirm-button")
+
+readInputField.addEventListener("click",()=>{
+    const inputValue = inputField.value;
+    gridCreate(inputValue);
+})

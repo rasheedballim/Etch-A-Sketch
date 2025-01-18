@@ -10,8 +10,8 @@
 
 
 .content {
-    flex: 0 0 calc(100% / 16); 
-    height: calc(100% / 16);   
+    flex: 0 0 calc(850px / 64); 
+    height: calc(850px / 64);   
     box-sizing: border-box;   
     border: 1px solid lightgray; 
     border-radius: 10px;
@@ -24,5 +24,23 @@ and dividing it by 16. */
 
 #reset_button{
     background-color: lightblue;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    font-size:  30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    
 
+}
+.nav-panel{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-input{
+    margin-top: 20px;
+    width: 100px;
+    height: 20px;
 }
