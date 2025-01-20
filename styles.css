@@ -20,7 +20,6 @@
     height: calc(650px / 64);   
     box-sizing: border-box;   
     border: 1px solid lightgray; 
-    border-radius: 10px;
 }
 /* The calc(100% / 16) always takes the total width or total height of the container, 
 depending on whether it’s applied to flex-basis (width) or height. The items will form 
